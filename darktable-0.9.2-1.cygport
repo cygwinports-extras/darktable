@@ -1,0 +1,17 @@
+inherit cmake
+
+
+HOMEPAGE="http://darktable.sourceforge.net/"
+SRC_URI="mirror://sourceforge/darktable/${P}.tar.gz"
+
+PATCH_URI="
+	0.9.2-as-needed.patch
+	0.9.2-cygwin-install.patch
+	0.9.2-cygwin-module.patch
+	0.9.2-find-flickcurl.patch
+	0.9.2-find-gettext.patch
+	0.9.2-find-gphoto2.patch
+	0.9.2-no-Werror.patch
+"
+
+CYGCMAKE_ARGS="-DUSE_OPENMP=OFF -DUSE_OPENCL=OFF"

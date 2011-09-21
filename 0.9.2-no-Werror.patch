@@ -1,0 +1,15 @@
+--- origsrc/darktable-0.9.2/src/CMakeLists.txt	2011-08-24 04:20:29.000000000 -0500
++++ src/darktable-0.9.2/src/CMakeLists.txt	2011-09-20 18:18:54.295465500 -0500
+@@ -238,10 +238,10 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wal
+ # c++ code doesn't like -Werror (libraw)
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fno-strict-aliasing")
+ 
+-if(NOT APPLE)
++if(NOT APPLE AND NOT CYGWIN)
+   # apple build fails on deprecated warnings..
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
+-endif(NOT APPLE)
++endif(NOT APPLE AND NOT CYGWIN)
+ 
+ if(NOT WIN32)
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
